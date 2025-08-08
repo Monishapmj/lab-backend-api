@@ -9,13 +9,14 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB connection
-mongoose.connect('mongodb+srv://MonishaJ:<Ajiabimoni123>@cluster0.8idyd6n.mongodb.net/', {
+mongoose.connect('mongodb+srv://MonishaJ:Ajiabimoni123@cluster0.8idyd6n.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
+
 .then(() => console.log("MongoDB Atlas Connected"))
-.catch(err => console.log(err));
+.catch(err => console.error("MongoDB Connection Error:", err));
+
 
 // Routes
 const itemRoutes = require('./routes/itemRoutes');
